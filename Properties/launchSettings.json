@@ -2,7 +2,7 @@
   "profiles": {
     "EfDbMigrator": {
       "commandName": "Project",
-      "commandLineArgs": "--publishFolder \"C:\\git\\DbMigrator\\EfDbMigrator\\bin\\Debug\\netcoreapp3.1\" --dbContextAssembly \"PersonalInformation.Repository.dll\" --dbContextTypeName \"PersonalInformationDbContext\" --connectionString \"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=migrationTest;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False\""
+      "commandLineArgs": "--dbContextAssembly \"PersonalInformation.Repository.dll\" --dbContextTypeName \"PersonalInformationDbContext\" --connectionString \"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=migrationTest;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False\""
     }
   }
 }

@@ -11,8 +11,8 @@ namespace EfDbMigrator
     {
         public class Options
         {
-            [Option(longName: "publishFolder", Required = true, HelpText = "Folder containing the published DLLs.")]
-            public string PublishFolder { get; set; }
+            [Option(longName: "publishFolder", Required = false, HelpText = "Folder containing the published DLLs. Defaults to the working folder.")]
+            public string PublishFolder { get; set; } 
 
             [Option(longName: "dbContextAssembly", Required = true, HelpText = "The assembly containing the DbContext to use.")]
             public string DbContextAssembly { get; set; }
@@ -36,7 +36,7 @@ namespace EfDbMigrator
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(o =>
                 {
-                    LoadAssemblies(o.PublishFolder);
+                    LoadAssemblies(o.PublishFolder ?? Directory.GetCurrentDirectory());
 
                     var dbContextAssemblyName = o.DbContextAssembly.Remove(o.DbContextAssembly.ToUpper().IndexOf(".DLL"));
 
