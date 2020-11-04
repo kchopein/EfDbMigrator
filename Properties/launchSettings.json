@@ -3,6 +3,9 @@
     "EfDbMigrator": {
       "commandName": "Project",
       "commandLineArgs": "--dbContextAssembly \"PersonalInformation.Repository.dll\" --dbContextTypeName \"PersonalInformationDbContext\" --connectionString \"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=migrationTest;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False\""
+    },
+    "Docker": {
+      "commandName": "Docker"
     }
   }
 }
