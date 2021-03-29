@@ -5,14 +5,14 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Loader;
 
-namespace EfDbMigrator
+namespace Kchopein.EfDbMigrator
 {
-    class Program
+    internal class Program
     {
         public class Options
         {
             [Option(longName: "publishFolder", Required = false, HelpText = "Folder containing the published DLLs. Defaults to the working folder.")]
-            public string PublishFolder { get; set; } 
+            public string PublishFolder { get; set; }
 
             [Option(longName: "dbContextAssembly", Required = true, HelpText = "The assembly containing the DbContext to use.")]
             public string DbContextAssembly { get; set; }
@@ -31,7 +31,7 @@ namespace EfDbMigrator
         /// <param name="dnContextAssembly">The assembly containing the DbContext to use.</param>
         /// <param name="dbContextTypeName">Name of the DbContext to use.</param>
         /// <param name="connectionString">The connection string.</param>
-        public static void Main(string [] args)
+        public static void Main(string[] args)
         {
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(o =>
