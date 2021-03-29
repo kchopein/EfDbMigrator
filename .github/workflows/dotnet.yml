@@ -1,0 +1,42 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Publish NuGet 2
+      # You may pin to the exact commit or the version.
+      # uses: Rebel028/publish-nuget@134413239ff7e0c7101db61b6c40a76529d0b0f4
+      uses: Rebel028/publish-nuget@2.6.1
+      with:
+        # Filepath of the project to be packaged, relative to root of repository
+        PROJECT_FILE_PATH: Kchopein.EfDbMigrator.csproj
+        # NuGet package id, used for version detection & defaults to project name
+        PACKAGE_NAME: Kchopein.EfDbMigrator
+        # Required for packages pushed to Github Package Registry. User allowed to push to repository, defaults to GITHUB_ACTOR (user that triggered the action)
+        GITHUB_USER: kchopein
+        # API key to authenticate with NuGet server, or a token, issued for GITHUB_USER if you use GPR
+        NUGET_KEY: oy2dvhecjeyqyoqnakwaqipsit7ljvpuraj3v6ltdip3om
+        # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
+        INCLUDE_SYMBOLS: true
+        # Flag to throw an error when trying to publish an existing version of a package
+        THOW_ERROR_IF_VERSION_EXISTS: true
+
+
