@@ -17,6 +17,18 @@ steps:
     packagesToPack: '**/*.csproj'
     includesymbols: true
     versioningScheme: 'off'
+
+- task: DownloadSecureFile@1
+  name: "GetCertificate"
+  inputs:
+    secureFile: 'kchopein.pfx'
+
+- task: PowerShell@2
+  name: Sign
+  inputs:
+    targetType: 'inline'
+    script: 'nuget sign .\Kchopein.EfDbMigrator.*.nupkg -CertificatePath $(GetCertificate.secureFilePath)'
+
 - task: NuGetCommand@2
   inputs:
     command: 'push'
