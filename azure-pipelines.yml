@@ -27,7 +27,7 @@ steps:
   name: Sign
   inputs:
     targetType: 'inline'
-    script: 'nuget sign .\Kchopein.EfDbMigrator.*.nupkg -CertificatePath $(GetCertificate.secureFilePath)'
+    script: 'nuget sign $(Build.ArtifactStagingDirectory)/**/*.nupkg -CertificatePath $(GetCertificate.secureFilePath)'
 
 - task: NuGetCommand@2
   inputs:
