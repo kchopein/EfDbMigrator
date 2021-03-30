@@ -9,10 +9,16 @@
     <RepositoryUrl>https://github.com/kchopein/EfDbMigrator</RepositoryUrl>
     <PackageId>Kchopein.EfDbMigrator</PackageId>
     <Product>Kchopein.EfDbMigrator</Product>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
+    <None Include="path\filename.ext">
+        <Pack>true</Pack>
+        <PackageCopyToOutput>true</PackageCopyToOutput>
+        <PackageFlatten>true</PackageFlatten>
+        <PackagePath>contentFiles\any\asset;content\any\asset</PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt">
