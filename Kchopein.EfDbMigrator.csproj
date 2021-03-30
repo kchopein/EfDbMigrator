@@ -13,7 +13,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
-    <None Include="path\filename.ext">
+    <None Include="lib\*.json">
         <Pack>true</Pack>
         <PackageCopyToOutput>true</PackageCopyToOutput>
         <PackageFlatten>true</PackageFlatten>
