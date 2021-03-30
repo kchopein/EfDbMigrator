@@ -23,11 +23,11 @@ steps:
   inputs:
     secureFile: 'kchopein.pfx'
 
-- task: PowerShell@2
-  name: Sign
-  inputs:
-    targetType: 'inline'
-    script: 'nuget sign $(Build.ArtifactStagingDirectory)/**/*.nupkg -CertificatePath $(GetCertificate.secureFilePath)'
+# - task: PowerShell@2
+#   name: Sign
+#   inputs:
+#     targetType: 'inline'
+#     script: 'nuget sign $(Build.ArtifactStagingDirectory)/**/*.nupkg -CertificatePath $(GetCertificate.secureFilePath)'
 
 - task: NuGetCommand@2
   inputs:
