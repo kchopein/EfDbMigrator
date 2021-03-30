@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Authors>Kchopein</Authors>
@@ -8,7 +9,7 @@
     <RepositoryUrl>https://github.com/kchopein/EfDbMigrator</RepositoryUrl>
     <PackageId>Kchopein.EfDbMigrator</PackageId>
     <Product>Kchopein.EfDbMigrator</Product>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
   </PropertyGroup>
   <ItemGroup>
     <None Include="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
